@@ -26,7 +26,9 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+  "node_modules/datatables.net-dt/css/dataTables.dataTables.min.css",
+  "node_modules/datatables.net-responsive-dt/css/responsive.dataTables.min.css"
             ]
           },
           "configurations": {

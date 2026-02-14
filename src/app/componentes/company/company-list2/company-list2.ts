@@ -1,14 +1,50 @@
 import { Component , AfterViewInit, signal} from '@angular/core';
 import DataTable from 'datatables.net';
-import { Company } from '../../../model/company';
-
 @Component({
   selector: 'app-company-list',
   imports: [],
-  templateUrl: './company-list.html',
-  styleUrl: './company-list.css',
+  template: `<p>company-list works!</p>
+<h2>Mi tabla Numero 2</h2>
+<button (click)="changeValue()">Isabel</button>
+<table id="myTable" class="display stripe hover center">
+  <thead>
+   <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  </thead>
+  <tbody>
+@for ( datito of data; track $index) {
+  <tr>
+    <td>{{datito.company}}</td>
+    <td>{{datito.contact}}</td>
+    <td>{{datito.country}}</td>
+  </tr>
+}
+
+</tbody>
+</table>
+<h1>Total {{total()}}</h1>
+`,
+  styles: `table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+  border: 1px solid #dae6df;
+  text-align: left;
+  padding: 8px;
+  color: green;
+}
+tr:nth-child(even) {
+  background-color: #bb1818;
+}
+`,
 })
-export class CompanyList implements AfterViewInit{
+
+export class CompanyList2 implements AfterViewInit{
     ngAfterViewInit(): void {
     // Inicializa DataTable cuando el DOM ya está renderizado
     new DataTable('#myTable', {
@@ -16,89 +52,69 @@ export class CompanyList implements AfterViewInit{
     });
   }
 
-  company1 = signal<string>("papu");
-  contact1 = signal<string>("Elmer delaPazd");
-  country1 = signal<string>("Peru");
-
-  constructor(){
-    this.company1.set("Isyel")
-    this.country1.set("Bolivia")
-  }
-
-//data: Company[] =
-data: Array<Company> =
+data =
 [
   {
     "company": "Ernst Handel",
     "contact": "Roland Mendel",
     "country": "Austria",
-    "money":"MXN"
+    "Money":"MXD"
   },
   {
     "company": "Island Trading",
     "contact": "Helen Bennett",
     "country": "UK",
-    "money":"USD"
+    "Money":"USD"
   },
   {
     "company": "Laughing Bacchus Winecellars",
     "contact": "Yoshi Tannamuri",
-    "country": "Canada",
-     "money":"USD"
+    "country": "Canada"
   },
   {
     "company": "Magazzini Alimentari Riuniti",
     "contact": "Giovanni Rovelli",
-    "country": "Italy",
-     "money":"USD"
+    "country": "Italy"
   },
   {
     "company": "North/South",
     "contact": "Simon Crowther",
-    "country": "UK",
-     "money":"USD"
+    "country": "UK"
   },
   {
     "company": "Paris spécialités",
     "contact": "Marie Bertrand",
-    "country": "France",
-     "money":"FRA"
+    "country": "France"
   },
   {
     "company": "Rattlesnake Canyon Grocery",
     "contact": "Paula Wilson",
-    "country": "USA",
-     "money":"USD"
+    "country": "USA"
   },
   {
     "company": "Simons bistro",
     "contact": "Jytte Petersen",
-    "country": "Denmark",
-     "money":"DEN"
+    "country": "Denmark"
   },
   {
     "company": "The Big Cheese",
     "contact": "Liz Nixon",
-    "country": "USA",
-     "money":"USD"
+    "country": "USA"
   },
   {
     "company": "Vaffeljernet",
     "contact": "Palle Ibsen",
-    "country": "Norway",
-     "money":"USD"
+    "country": "Norway"
   },
   {
     "company": "Wolski Zajazd",
     "contact": "Zbyszek Piestrzeniewicz",
-    "country": "Poland",
-     "money":"USD"
+    "country": "Poland"
   },
   {
     "company": "Bon app'",
     "contact": "Laurence Lebihan",
-    "country": "France",
-     "money":"USD"
+    "country": "France"
   },
   {
     "company": "Blauer See Delikatessen",

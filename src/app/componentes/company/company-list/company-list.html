@@ -1,1 +1,36 @@
 <p>company-list works!</p>
+<h2>Mi tabla</h2>
+
+<button (click)="changeValue()">Isabel</button>
+
+
+<table id="myTable" class="display stripe hover center">
+  <thead>
+   <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+    <th>Money</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <!--  <tr>
+     <td>{{company1()}}</td>
+     <td>{{contact1()}}</td>
+     <td>{{country1()}}</td>
+    </tr> -->
+
+@for ( datito of data; track $index) {
+  <tr>
+    <td>{{datito.company}}</td>
+    <td>{{datito.contact}}</td>
+    <td>{{datito.country}}</td>
+    <td>{{datito.money}}</td>
+  </tr>
+}
+
+</tbody>
+</table>
+
+<h1>Total {{total()}}</h1>

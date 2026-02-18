@@ -1,125 +1,111 @@
-import { Injectable } from '@angular/core';
-import { Company } from '../model/company';
-
-@Injectable({
-  providedIn: 'root',
-})
-
-export class CompanyService {
-
-//data: Company[] =
-data: Array<Company> =
-[
+{"companies": [
   {
     "company": "Ernst Handel",
     "contact": "Roland Mendel",
     "country": "Austria",
-    "money":"MXN"
+    "Money": "MXD"
   },
   {
     "company": "Island Trading",
     "contact": "Helen Bennett",
     "country": "UK",
-    "money":"USD"
+    "Money": "USD"
   },
   {
     "company": "Laughing Bacchus Winecellars",
     "contact": "Yoshi Tannamuri",
     "country": "Canada",
-     "money":"USD"
+    "Money": null
   },
   {
     "company": "Magazzini Alimentari Riuniti",
     "contact": "Giovanni Rovelli",
     "country": "Italy",
-     "money":"USD"
+    "Money": null
   },
   {
     "company": "North/South",
     "contact": "Simon Crowther",
     "country": "UK",
-     "money":"USD"
+    "Money": null
   },
   {
     "company": "Paris spécialités",
     "contact": "Marie Bertrand",
     "country": "France",
-     "money":"FRA"
+    "Money": null
   },
   {
     "company": "Rattlesnake Canyon Grocery",
     "contact": "Paula Wilson",
     "country": "USA",
-     "money":"USD"
+    "Money": null
   },
   {
     "company": "Simons bistro",
     "contact": "Jytte Petersen",
     "country": "Denmark",
-     "money":"DEN"
+    "Money": null
   },
   {
     "company": "The Big Cheese",
     "contact": "Liz Nixon",
     "country": "USA",
-     "money":"USD"
+    "Money": null
   },
   {
     "company": "Vaffeljernet",
     "contact": "Palle Ibsen",
     "country": "Norway",
-     "money":"USD"
+    "Money": null
   },
   {
     "company": "Wolski Zajazd",
     "contact": "Zbyszek Piestrzeniewicz",
     "country": "Poland",
-     "money":"USD"
+    "Money": null
   },
   {
     "company": "Bon app'",
     "contact": "Laurence Lebihan",
     "country": "France",
-     "money":"USD"
+    "Money": null
   },
   {
     "company": "Blauer See Delikatessen",
     "contact": "Hanna Moos",
-    "country": "Germany"
+    "country": "Germany",
+    "Money": null
   },
   {
     "company": "Drachenblut Delikatessend",
     "contact": "Peter Franken",
-    "country": "Germany"
+    "country": "Germany",
+    "Money": null
   },
   {
     "company": "Frankenversand",
     "contact": "Martin Sommer",
-    "country": "Germany"
+    "country": "Germany",
+    "Money": null
   },
   {
     "company": "Furia Bacalhau e Frutos do Mar",
     "contact": "Lino Rodriguez",
-    "country": "Brazil"
+    "country": "Brazil",
+    "Money": null
   },
   {
     "company": "Godos Cocina Típica",
     "contact": "José Pedro Freyre",
-    "country": "Spain"
+    "country": "Spain",
+    "Money": null
   },
   {
     "company": "Hungry Owl All-Night Grocers",
     "contact": "Patricio Simpson",
-    "country": "Argentina"
-  },
-  {
-    "company": "Hungry Owl All-Night Grocers",
-    "contact": "Patricio Simpson",
-    "country": "Argentina"
+    "country": "Argentina",
+    "Money": null
   }
 ]
- getAll():Array<Company>{
-  return this.data
- }
-
 }

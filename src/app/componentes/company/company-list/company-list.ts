@@ -1,6 +1,8 @@
-import { Component , AfterViewInit, signal} from '@angular/core';
+import { CompanyService } from './../../../services/company-service';
+import { Component , AfterViewInit, signal, inject} from '@angular/core';
 import DataTable from 'datatables.net';
 import { Company } from '../../../model/company';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-company-list',
@@ -16,133 +18,29 @@ export class CompanyList implements AfterViewInit{
     });
   }
 
+private router = inject(Router);
+
   company1 = signal<string>("papu");
   contact1 = signal<string>("Elmer delaPazd");
   country1 = signal<string>("Peru");
 
-  constructor(){
+
+
+  datos:Array<Company>=[]
+
+  constructor(private companyService:CompanyService){
     this.company1.set("Isyel")
     this.country1.set("Bolivia")
+    this.datos = companyService.getAll()
   }
 
-//data: Company[] =
-data: Array<Company> =
-[
-  {
-    "company": "Ernst Handel",
-    "contact": "Roland Mendel",
-    "country": "Austria",
-    "money":"MXN"
-  },
-  {
-    "company": "Island Trading",
-    "contact": "Helen Bennett",
-    "country": "UK",
-    "money":"USD"
-  },
-  {
-    "company": "Laughing Bacchus Winecellars",
-    "contact": "Yoshi Tannamuri",
-    "country": "Canada",
-     "money":"USD"
-  },
-  {
-    "company": "Magazzini Alimentari Riuniti",
-    "contact": "Giovanni Rovelli",
-    "country": "Italy",
-     "money":"USD"
-  },
-  {
-    "company": "North/South",
-    "contact": "Simon Crowther",
-    "country": "UK",
-     "money":"USD"
-  },
-  {
-    "company": "Paris spécialités",
-    "contact": "Marie Bertrand",
-    "country": "France",
-     "money":"FRA"
-  },
-  {
-    "company": "Rattlesnake Canyon Grocery",
-    "contact": "Paula Wilson",
-    "country": "USA",
-     "money":"USD"
-  },
-  {
-    "company": "Simons bistro",
-    "contact": "Jytte Petersen",
-    "country": "Denmark",
-     "money":"DEN"
-  },
-  {
-    "company": "The Big Cheese",
-    "contact": "Liz Nixon",
-    "country": "USA",
-     "money":"USD"
-  },
-  {
-    "company": "Vaffeljernet",
-    "contact": "Palle Ibsen",
-    "country": "Norway",
-     "money":"USD"
-  },
-  {
-    "company": "Wolski Zajazd",
-    "contact": "Zbyszek Piestrzeniewicz",
-    "country": "Poland",
-     "money":"USD"
-  },
-  {
-    "company": "Bon app'",
-    "contact": "Laurence Lebihan",
-    "country": "France",
-     "money":"USD"
-  },
-  {
-    "company": "Blauer See Delikatessen",
-    "contact": "Hanna Moos",
-    "country": "Germany"
-  },
-  {
-    "company": "Drachenblut Delikatessend",
-    "contact": "Peter Franken",
-    "country": "Germany"
-  },
-  {
-    "company": "Frankenversand",
-    "contact": "Martin Sommer",
-    "country": "Germany"
-  },
-  {
-    "company": "Furia Bacalhau e Frutos do Mar",
-    "contact": "Lino Rodriguez",
-    "country": "Brazil"
-  },
-  {
-    "company": "Godos Cocina Típica",
-    "contact": "José Pedro Freyre",
-    "country": "Spain"
-  },
-  {
-    "company": "Hungry Owl All-Night Grocers",
-    "contact": "Patricio Simpson",
-    "country": "Argentina"
-  },
-  {
-    "company": "Hungry Owl All-Night Grocers",
-    "contact": "Patricio Simpson",
-    "country": "Argentina"
-  }
-]
 
 total(){
-   return this.data.length??0
+   return this.datos.length??0
 }
 
 changeValue() {
-  this.data = this.data.map(item =>{
+  this.datos = this.datos.map(item =>{
     if(item.contact ==="Roland Mendel"){
       return{...item,contact:"Isabel Campos"}
     }
@@ -153,5 +51,15 @@ changeValue() {
     return item;
   });
 }
+
+
+new(){
+
+}
+
+getall(){
+
+}
+
 
 }

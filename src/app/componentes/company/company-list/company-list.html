@@ -21,7 +21,7 @@
      <td>{{country1()}}</td>
     </tr> -->
 
-@for ( datito of data; track $index) {
+@for ( datito of datos; track $index) {
   <tr>
     <td>{{datito.company}}</td>
     <td>{{datito.contact}}</td>
@@ -33,4 +33,7 @@
 </tbody>
 </table>
 
+<h2>Html Table observable - Sunscribe -JsonServer</h2>
+<!-- <button (onclick)="getAll()">Subscribirse</button>
+ -->
 <h1>Total {{total()}}</h1>
